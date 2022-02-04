@@ -7,6 +7,7 @@
 }
 
 body {
+    width: 100%;
     display: flex;
 }
 aside {
@@ -14,10 +15,14 @@ aside {
     align-items: center;
     justify-content: center;
     position: fixed;
+    top: 0;
+    left: 0;
+    flex-basis: 300px;
     width: 300px;
     height: 100vh;
     background-color: #353353;
     border-right: 1px solid #6e6e6e;
+    
 }
 aside .aside-wrapper {
     position: relative;
@@ -31,6 +36,7 @@ aside .logo span {
     font-family: 'Permanent Marker', cursive;
     font-size: 40px;
     color: white;
+    letter-spacing: 2px;
 }
 
 aside .navbar ul a {
@@ -44,10 +50,10 @@ aside .navbar ul a li {
     margin: 10px 0;
 }
 aside .navbar ul a li:hover {
-    color: #ffdd3c;
+    color: #f4ca00;
 }
 aside .navbar ul a li .bi{
-    color: #ffdd3c;
+    color: #f4ca00;
     margin-right: 10px;
 }
 
@@ -57,10 +63,63 @@ aside footer {
 main {
     width: 100%;
     background-color: aquamarine;
+    margin-left: 300px;
 }
 main .section1 {
     background-color: #353353;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .section1-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main .section1 .section1-box .avatar {
+    width: 130px;
+    height: 130px;
+    background-color: #f4ca00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+
+}
+main .section1 .section1-box .avatar img {
+    width: 100px;
+    height: 100px;
+}
+
+main .section1-box .name {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Poor Story', cursive;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+main .section1-box .explain {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+}
+main .section1-box .logos {
+    margin-top: 20px;
+}
+main .section1-box .logos a {
+    font-size: 26px;
+    margin-left: 10px;
+    color: white;
+}
+main .section1-box .logos a:hover {
+    color: #f4ca00;
 }
 main .section2 {
     background-color: navajowhite;
