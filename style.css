@@ -4,8 +4,11 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  font-family: "Righteous", cursive;
 }
-
+html {
+  background: red;
+}
 body {
   width: 100%;
   display: flex;
@@ -91,6 +94,11 @@ main .section1-box {
 main .section1 .section1-box .avatar {
   width: 130px;
   height: 130px;
+  background: url("/img/명함사이즈.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0px -10px;
+
   background-color: #da911b;
   border-radius: 50%;
   display: flex;
@@ -118,16 +126,39 @@ main .section1-box .explain {
   text-align: center;
   font-family: "Righteous", cursive;
 }
+main .section1-box .explain .text-rotating {
+  font-size: 24px;
+  display: inline-block;
+  animation: bounce 1s;
+}
 main .section1-box .logos {
+  width: 200px;
   margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
 }
 main .section1-box .logos a {
   font-size: 26px;
-  margin-left: 10px;
   color: white;
 }
 main .section1-box .logos a:hover {
   color: #da911b;
+}
+
+main .section1-box .contact-btn a {
+  width: 140px;
+  height: 45px;
+  text-align: center;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7b47f3;
+  border-radius: 30px;
+  color: #fff;
+  font-family: "Righteous", cursive;
+  letter-spacing: 3px;
+  text-decoration: none;
 }
 
 main .section1 .parallax {
@@ -139,6 +170,7 @@ main .section1 .parallax {
 }
 main .section1 .parallax svg {
   display: block;
+  width: 50px;
   height: 40px;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -188,7 +220,7 @@ main .section1 .parallax .layer8 {
 }
 main .section1 .parallax .layer9 {
   position: relative;
-  top: 40%;
+  top: 50%;
   left: 55%;
 }
 main .section1 .parallax .layer10 {
@@ -197,8 +229,74 @@ main .section1 .parallax .layer10 {
   left: 80%;
 }
 main .section2 {
-  background-color: navajowhite;
+  background-color: #f1f1f1;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+main .section2 .container {
+  width: 70%;
+}
+
+main .section2 .container .avatar-wrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+main .section2 .container .avatar {
+  width: 150px;
+  height: 150px;
+  background: url("/img/명함사이즈.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0px -10px;
+  background-color: #da911b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+
+main .section2 .container .avatar-wrapper .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poor Story", cursive;
+  line-height: 2;
+  position: relative;
+  padding: 20px;
+  background-color: #fafafa;
+  z-index: 2;
+  border-radius: 20px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+main .section2 .container .avatar-wrapper .content::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid #fff;
+  position: absolute;
+  left: -15px;
+  top: 20%;
+}
+
+main .section2 .container .skills {
+  margin-top: 50px;
+}
+
+main .section2 .container .skills .basic {
+  margin-bottom: 50px;
+  padding: 20px;
+  background-color: #fafafa;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
 @keyframes underbar {
@@ -209,5 +307,28 @@ main .section2 {
   to {
     transform: scaleX(1);
     transform-origin: 0% 50%;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+  80% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
