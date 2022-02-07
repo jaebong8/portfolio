@@ -6,9 +6,7 @@
   list-style: none;
   font-family: "Righteous", cursive;
 }
-html {
-  background: red;
-}
+
 body {
   width: 100%;
   display: flex;
@@ -82,6 +80,8 @@ main .section1 {
   justify-content: center;
   align-items: center;
   position: relative;
+  transform-style: preserve-3d;
+  perspective: 200px;
 }
 
 main .section1-box {
@@ -166,15 +166,18 @@ main .section1 .parallax {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  backface-visibility: hidden;
+  perspective: 200px;
+ 
+  
 }
 main .section1 .parallax svg {
   display: block;
   width: 50px;
   height: 40px;
   transform-style: preserve-3d;
-  backface-visibility: hidden;
+  perspective: 200px;
   transition: 0.1s;
+  
 }
 
 main .section1 .parallax .layer1 {
@@ -186,6 +189,7 @@ main .section1 .parallax .layer2 {
   position: relative;
   top: 10%;
   left: 50%;
+  
 }
 main .section1 .parallax .layer3 {
   position: relative;
@@ -196,6 +200,7 @@ main .section1 .parallax .layer4 {
   position: relative;
   top: 20%;
   left: 30%;
+  
 }
 main .section1 .parallax .layer5 {
   position: relative;
@@ -206,6 +211,7 @@ main .section1 .parallax .layer6 {
   position: relative;
   top: 40%;
   left: 15%;
+ 
 }
 main .section1 .parallax .layer7 {
   position: relative;
@@ -217,6 +223,8 @@ main .section1 .parallax .layer8 {
   position: relative;
   top: 55%;
   left: 25%;
+ 
+  
 }
 main .section1 .parallax .layer9 {
   position: relative;
@@ -227,10 +235,12 @@ main .section1 .parallax .layer10 {
   position: relative;
   top: 40%;
   left: 80%;
+  
+  
+ 
 }
 main .section2 {
-  background-color: #f1f1f1;
-  height: 100vh;
+  background-color:#f9f9ff;
   display: flex;
   justify-content: center;
   padding-top: 100px;
@@ -238,6 +248,12 @@ main .section2 {
 
 main .section2 .container {
   width: 70%;
+  height: 100%;
+}
+
+
+main .section2 .container .about-me h1{
+    opacity: 1;
 }
 
 main .section2 .container .avatar-wrapper {
@@ -299,6 +315,87 @@ main .section2 .container .skills .basic {
     rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
+main .section2 .container .skills .progress-bar {
+    font-family: "Poor Story", cursive;
+}
+
+
+/* section3 projects */
+main .section3 {
+  background-color:#f9f9ff;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+
+}
+main .section3 .container {
+    width: 70%;
+    height: 100%;
+}
+main .section3 .container .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(300px, auto);
+    gap: 10px 10px;
+    
+
+   
+}
+
+main .section3 .container .grid-container div {
+    background-color: #7b47f3;
+}
+
+
+
+
+
+
+
+
+
+
+
+main .section4 {
+    background-color:#f9f9ff;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+}
+main .section4 .container {
+    width: 70%;
+    height: 100%;
+    
+}
+
+main .section4 .container .contact-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    
+}
+main .section4 .container .contact-box .content-box{
+    width: 400px;
+    height: 200px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    
+}
+
+main .section4 .container .contact-box .content-box .bi {
+    font-size: 42px;
+    color: #54487c;
+    margin-right: 10px;
+}
+
 @keyframes underbar {
   from {
     transform: scaleX(0);
@@ -331,4 +428,16 @@ main .section2 .container .skills .basic {
     transform: translateY(0px);
     opacity: 1;
   }
+}
+
+@keyframes parallax {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }

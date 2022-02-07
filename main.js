@@ -1,3 +1,4 @@
+let random = Math.random() * 5;
 window.addEventListener("mousemove", function (e) {
   let x = e.pageX;
   let y = e.pageY;
@@ -6,10 +7,9 @@ window.addEventListener("mousemove", function (e) {
   let layer = document.querySelectorAll(".parallax svg");
 
   layer.forEach((v) => {
-    v.style.transform = `translate3d(${cx}px,${cy}px,0px)`;
+    v.style.transform = `translate3d(${cx}px,${cy}px,${random}px)`;
   });
 });
-
 const textRotatingHandler = () => {
   const textRotating = document.querySelector(".text-rotating");
 
@@ -72,8 +72,28 @@ contactBtn.addEventListener("mouseenter", () => {
 });
 
 const progressbar = document.querySelector(".progress-bar");
+const progressbar2 = document.querySelector(".progress-bar.bg-warning");
+const progressbar3 = document.querySelector(".progress-bar.bg-success");
+const aboutMe = document.querySelector(".about-me h1");
+document.addEventListener("scroll", () => {
+  let scrollRatio =
+    (window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) *
+    100;
+  console.log(scrollRatio);
+  if (scrollRatio < 13) {
+    aboutMe.animate([{ transform: "translateY(-30px)" }], 1000);
+  }
 
-console.log(progressbar);
-progressbar.onload = function () {
-  progressbar.style.width = "50%";
-};
+  if (scrollRatio > 16) {
+    aboutMe.animate([{ transform: "translateY(0)", opacity: "1" }], 1000);
+  }
+  if (scrollRatio > 67) {
+    progressbar.style.width = "30%";
+  }
+  if (scrollRatio > 85) {
+    progressbar2.style.width = "30%";
+  }
+  if (scrollRatio > 95) {
+    progressbar3.style.width = "30%";
+  }
+});
