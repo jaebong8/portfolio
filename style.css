@@ -32,7 +32,9 @@ aside .aside-wrapper {
   flex-direction: column;
   justify-content: space-between;
 }
-
+aside .logo a {
+    text-decoration: none;
+}
 aside .logo span {
   font-family: "Permanent Marker", cursive;
   font-size: 40px;
@@ -332,11 +334,16 @@ main .section3 .container {
     width: 70%;
     height: 100%;
 }
+
+main .section2 .container .project--h1{
+    opacity: 1;
+}
 main .section3 .container .grid-container {
+    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(300px, auto);
-    gap: 10px 10px;
+    gap: 20px 20px;
     
 
    
@@ -344,11 +351,80 @@ main .section3 .container .grid-container {
 
 main .section3 .container .grid-container div {
     background-color: #7b47f3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    
+}
+main .section3 .container .grid-container div:nth-child(3) {
+    display: none;
+}
+main .section3 .container .grid-container div:nth-child(4) {
+    display: none;
+}
+main .section3 .container .grid-container div:nth-child(5) {
+    display: none;
+}
+main .section3 .container .grid-container div h1 {
+    position:absolute;
+    font-family: "Poor Story", cursive;
+
+    
+    display: none;
+}
+main .section3 .container .grid-container div p {
+    position: absolute;
+    font-family: "Poor Story", cursive;
+    
+    display: none
 }
 
 
+main .section3 .container .grid-container div::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 165, 191, 0.2);
+    
+    position;:absolute;
+    top:0;
+    left:0;
+    display:none;
+    
+}
 
+main .section3 .container .grid-container div:hover::after {
+    display: block;
+}
+main .section3 .container .grid-container div:hover h1{
+    display: block;
+    animation: projectparallax 1s forwards;
+}
+main .section3 .container .grid-container div:hover p{
+    display: block;
+    animation: projectparallax2 1s forwards;
+    
+}
 
+main .section3 .container .load-more {
+    margin: 0 auto;
+    width: 140px;
+  height: 45px;
+  text-align: center;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff4c60;
+  border-radius: 30px;
+  color: #fff;
+  font-family: "Righteous", cursive;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
 
 
 
@@ -378,7 +454,7 @@ main .section4 .container .contact-box {
     
 }
 main .section4 .container .contact-box .content-box{
-    width: 400px;
+    width: 40%;
     height: 200px;
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -438,6 +514,29 @@ main .section4 .container .contact-box .content-box .bi {
 
     to {
         transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes projectparallax {
+    from {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+}
+@keyframes projectparallax2 {
+    from {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(20px);
         opacity: 1;
     }
 }

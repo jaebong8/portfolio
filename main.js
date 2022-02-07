@@ -75,25 +75,58 @@ const progressbar = document.querySelector(".progress-bar");
 const progressbar2 = document.querySelector(".progress-bar.bg-warning");
 const progressbar3 = document.querySelector(".progress-bar.bg-success");
 const aboutMe = document.querySelector(".about-me h1");
+const projectH1 = document.querySelector(".project--h1");
+const contactH1 = document.querySelector(".contact--h1");
+
 document.addEventListener("scroll", () => {
   let scrollRatio =
     (window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) *
     100;
   console.log(scrollRatio);
-  if (scrollRatio < 13) {
+  if (scrollRatio < 4) {
     aboutMe.animate([{ transform: "translateY(-30px)" }], 1000);
   }
 
-  if (scrollRatio > 16) {
+  if (scrollRatio > 7) {
     aboutMe.animate([{ transform: "translateY(0)", opacity: "1" }], 1000);
   }
-  if (scrollRatio > 67) {
+  if (scrollRatio > 30) {
     progressbar.style.width = "30%";
   }
-  if (scrollRatio > 85) {
+  if (scrollRatio > 40) {
     progressbar2.style.width = "30%";
   }
-  if (scrollRatio > 95) {
+  if (scrollRatio > 50) {
     progressbar3.style.width = "30%";
   }
+  if (scrollRatio < 49) {
+    projectH1.animate([{ transform: "translateY(-30px)" }], 1000);
+  }
+
+  if (scrollRatio > 53) {
+    projectH1.animate([{ transform: "translateY(0)", opacity: "1" }], 1000);
+  }
+  if (scrollRatio < 79) {
+    contactH1.animate([{ transform: "translateY(-30px)" }], 1000);
+  }
+
+  if (scrollRatio > 82) {
+    contactH1.animate([{ transform: "translateY(0)", opacity: "1" }], 1000);
+  }
+});
+
+const loadMoreBtn = document.querySelector(".load-more");
+const gridItem = document.querySelectorAll(".grid-container div");
+loadMoreBtn.addEventListener("click", () => {
+  gridItem.forEach((Item) => {
+    Item.style.display = "flex";
+  });
+  loadMoreBtn.style.display = "none";
+});
+
+loadMoreBtn.addEventListener("mouseenter", () => {
+  loadMoreBtn.animate(
+    [{ transform: "scale(1)" }, { transform: "scale(0.8)" }],
+    300
+  );
 });
