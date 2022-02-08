@@ -6,10 +6,13 @@
   list-style: none;
   font-family: "Righteous", cursive;
 }
-
+html {
+  background-color: #353353;
+}
 body {
   width: 100%;
   display: flex;
+  
 }
 aside {
   display: flex;
@@ -24,6 +27,14 @@ aside {
   background-color: #353353;
   border-right: 1px solid #6e6e6e;
 }
+
+aside.active {
+  transition: 0.5s;
+  transform: translateX(0);
+}
+
+
+
 aside .aside-wrapper {
   position: relative;
   width: 80%;
@@ -40,6 +51,7 @@ aside .logo span {
   font-size: 40px;
   color: white;
   letter-spacing: 2px;
+  
 }
 
 aside .logo span:after {
@@ -70,11 +82,50 @@ aside .navbar ul a li .bi {
 aside footer {
   color: grey;
 }
+
+
 main {
   width: 100%;
-  background-color: aquamarine;
   margin-left: 280px;
 }
+main.active {
+  transform: translateX(280px);
+  transition: 0.8s;
+}
+main.active .section1,
+main.active .section2,
+main.active .section3,
+main.active .section4
+ {
+  opacity: 0.6;
+}
+
+main .phone-nav {
+  background-color: #353353;
+  
+  padding-left: 10px;
+  display: none;
+}
+main .phone-nav .bi-list {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+
+}
+main .phone-nav a {
+  text-decoration: none;
+}
+
+main .phone-nav .hide-name {
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px;
+  color: white;
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
+
+
+
 main .section1 {
   background-color: #353353;
   height: 100vh;
@@ -86,6 +137,7 @@ main .section1 {
   perspective: 200px;
 }
 
+
 main .section1-box {
   display: flex;
   flex-direction: column;
@@ -96,10 +148,8 @@ main .section1-box {
 main .section1 .section1-box .avatar {
   width: 130px;
   height: 130px;
-  background: url("/img/명함사이즈.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: 0px -10px;
+  background: url("/img/avatar2.png") no-repeat center 5px/110%;
+  
 
   background-color: #da911b;
   border-radius: 50%;
@@ -265,32 +315,30 @@ main .section2 .container .avatar-wrapper {
 }
 main .section2 .container .avatar {
   width: 150px;
+  min-width: 120px;
   height: 150px;
-  background: url("/img/명함사이즈.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: 0px -10px;
-  background-color: #da911b;
+  background: url("/img/avatar2.png") no-repeat center 5px/110%;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 main .section2 .container .avatar-wrapper .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Poor Story", cursive;
+  font-family: 'Noto Serif KR', serif;
+  min-width: 325px;
+  font-size: 16px;
   line-height: 2;
   position: relative;
   padding: 20px;
   background-color: #fafafa;
   z-index: 2;
   border-radius: 20px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 main .section2 .container .avatar-wrapper .content::before {
@@ -319,6 +367,7 @@ main .section2 .container .skills .basic {
 
 main .section2 .container .skills .progress-bar {
     font-family: "Poor Story", cursive;
+
 }
 
 
@@ -359,6 +408,16 @@ main .section3 .container .grid-container div {
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     
 }
+main .section3 .container .grid-container div:nth-child(1) {
+ background: url('./img/project1.png') no-repeat center / contain;
+}
+main .section3 .container .grid-container div:nth-child(2) {
+  
+}
+
+
+
+
 main .section3 .container .grid-container div:nth-child(3) {
     display: none;
 }
@@ -370,16 +429,18 @@ main .section3 .container .grid-container div:nth-child(5) {
 }
 main .section3 .container .grid-container div h1 {
     position:absolute;
-    font-family: "Poor Story", cursive;
-
-    
+    font-family: 'Noto Serif KR', serif;
+    color: white;
     display: none;
+    text-align: center;
 }
 main .section3 .container .grid-container div p {
     position: absolute;
-    font-family: "Poor Story", cursive;
-    
-    display: none
+    font-family: 'Noto Serif KR', serif;
+    color: white;
+    display: none;
+    font-size: 18px;
+    text-align: center;
 }
 
 
@@ -387,7 +448,7 @@ main .section3 .container .grid-container div::after {
     content: "";
     width: 100%;
     height: 100%;
-    background: rgba(255, 165, 191, 0.2);
+    background: rgba(78, 78, 78, 0.486);
     
     position;:absolute;
     top:0;
@@ -454,6 +515,7 @@ main .section4 .container .contact-box {
     
 }
 main .section4 .container .contact-box .content-box{
+    min-width: 300px;
     width: 40%;
     height: 200px;
     background: #fff;
@@ -462,15 +524,35 @@ main .section4 .container .contact-box .content-box{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 2vw;
     
+    
+}
+main .section4 .container .contact-box .content-box div:nth-child(2) {
+  font-family: "Poor Story", cursive;
 }
 
 main .section4 .container .contact-box .content-box .bi {
-    font-size: 42px;
+    font-size: 3vw;
     color: #54487c;
     margin-right: 10px;
 }
+
+.scroll-top-box {
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  display: none;
+  cursor: pointer;
+}
+.scroll-top-box .bi-arrow-up-circle-fill {
+  font-size: 42px;
+  color: rgba(216, 216, 216, 0.5);
+}
+
 
 @keyframes underbar {
   from {
@@ -540,3 +622,85 @@ main .section4 .container .contact-box .content-box .bi {
         opacity: 1;
     }
 }
+
+
+
+
+@media screen and (max-width:1023px) {
+
+
+
+
+
+
+
+
+
+
+  main .section3 .container .grid-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(300px, auto);
+    gap: 20px 20px;    
+}
+
+main .section4 .container .contact-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+main .section4 .container .contact-box .content-box {
+  width: 80%;
+  height: 150px;
+  margin-bottom: 30px;
+}
+
+  
+  }
+
+@media screen and (max-width:767px) {
+  /* 모바일 */
+  aside {
+    transition: transform 0.2s;
+    transform: translateX(-280px);
+  }
+
+
+
+  main {
+    width: 100%;
+    margin-left: 0px
+  }
+  main .phone-nav {
+    display: block;
+  }
+  
+  main .section2 .container .avatar-wrapper {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main .section2 .container .avatar-wrapper .content {
+    margin-top: 20px;
+  }
+
+  main .section2 .container .avatar-wrapper .content::before {
+    
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    transform: rotate(90deg) translateY(50%);
+  }
+
+  main .section4 .container .contact-box .content-box {
+    font-size: 2rem;
+  }
+
+
+  }

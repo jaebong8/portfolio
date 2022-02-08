@@ -77,7 +77,7 @@ const progressbar3 = document.querySelector(".progress-bar.bg-success");
 const aboutMe = document.querySelector(".about-me h1");
 const projectH1 = document.querySelector(".project--h1");
 const contactH1 = document.querySelector(".contact--h1");
-
+const scrollUp = document.querySelector(".scroll-top-box");
 document.addEventListener("scroll", () => {
   let scrollRatio =
     (window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) *
@@ -89,6 +89,11 @@ document.addEventListener("scroll", () => {
 
   if (scrollRatio > 7) {
     aboutMe.animate([{ transform: "translateY(0)", opacity: "1" }], 1000);
+  }
+  if (scrollRatio > 20) {
+    scrollUp.style.display = "block";
+  } else if (scrollRatio < 20) {
+    scrollUp.style.display = "none";
   }
   if (scrollRatio > 30) {
     progressbar.style.width = "30%";
@@ -129,4 +134,21 @@ loadMoreBtn.addEventListener("mouseenter", () => {
     [{ transform: "scale(1)" }, { transform: "scale(0.8)" }],
     300
   );
+});
+const listMenu = document.querySelector(".bi-list");
+const aside = document.querySelector("aside");
+const main = document.querySelector("main");
+const section1 = document.querySelector(".section1");
+listMenu.addEventListener("click", () => {
+  main.classList.toggle("active");
+  aside.classList.toggle("active");
+});
+
+scrollUp.addEventListener("click", function () {
+  var body = document.getElementsByTagName("body")[0];
+  //창의 스크롤을 본문 최상단으로 부드럽게 이동시킵니다.
+  window.scroll({
+    behavior: "smooth",
+    top: body.offsetTop,
+  });
 });
