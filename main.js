@@ -139,9 +139,11 @@ const listMenu = document.querySelector(".bi-list");
 const aside = document.querySelector("aside");
 const main = document.querySelector("main");
 const section1 = document.querySelector(".section1");
+const activeNav = document.querySelectorAll(".navbar ul a");
 listMenu.addEventListener("click", () => {
   main.classList.toggle("active");
   aside.classList.toggle("active");
+  document.body.classList.toggle("active");
 });
 
 scrollUp.addEventListener("click", function () {
@@ -150,5 +152,13 @@ scrollUp.addEventListener("click", function () {
   window.scroll({
     behavior: "smooth",
     top: body.offsetTop,
+  });
+});
+
+console.log(activeNav);
+activeNav.forEach((a) => {
+  a.addEventListener("click", () => {
+    main.classList.remove("active");
+    aside.classList.remove("active");
   });
 });

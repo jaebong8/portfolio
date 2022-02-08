@@ -26,6 +26,7 @@ aside {
   height: 100vh;
   background-color: #353353;
   border-right: 1px solid #6e6e6e;
+  transition: all 0.5s;
 }
 
 aside.active {
@@ -87,10 +88,11 @@ aside footer {
 main {
   width: 100%;
   margin-left: 280px;
+  transition: all 0.5s;
 }
 main.active {
   transform: translateX(280px);
-  transition: 0.8s;
+  transition: 0.5s;
 }
 main.active .section1,
 main.active .section2,
