@@ -148,7 +148,7 @@ main .section1-box {
 main .section1 .section1-box .avatar {
   width: 130px;
   height: 130px;
-  background: url("/img/avatar2.png") no-repeat center 5px/110%;
+  background: url("./img/avatar2.png") no-repeat center 5px/110%;
   
 
   background-color: #da911b;
@@ -317,7 +317,7 @@ main .section2 .container .avatar {
   width: 150px;
   min-width: 120px;
   height: 150px;
-  background: url("/img/avatar2.png") no-repeat center 5px/110%;
+  background: url("./img/avatar2.png") no-repeat center 5px/110%;
   border-radius: 50%;
   display: flex;
   align-items: center;
