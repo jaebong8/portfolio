@@ -774,9 +774,15 @@ main .section5 .container .contact-box .content-box {
     padding: 0;
     
 }
-
+main .section4 .container .experience--h1 {
+  width: 70%;
+  margin: 0 auto;
+}
 main .section4  .experience-box {
   min-width: 360px;
+  
+  
+  
 }
 
 
