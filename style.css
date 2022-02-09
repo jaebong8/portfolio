@@ -507,7 +507,7 @@ main .section4 .container {
 
 main .section4 .container .experience-box {
     width: 50%;
-    min-width: 400px;
+    min-width: 360px;
     padding-top: 30px;
     padding-bottom: 30px;
     margin: 0 auto;
@@ -767,6 +767,23 @@ main .section5 .container .contact-box .content-box {
     top: -15px;
     transform: rotate(90deg) translateY(50%);
   }
+
+
+  main .section4 .container {
+    width: 100%;
+    padding: 0;
+    
+}
+
+main .section4  .experience-box {
+  min-width: 360px;
+}
+
+
+
+
+
+
 
   main .section5 .container .contact-box .content-box {
     font-size: 2rem;
