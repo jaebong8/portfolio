@@ -97,34 +97,40 @@ document.addEventListener("scroll", () => {
   } else if (scrollRatio < 20) {
     scrollUp.style.display = "none";
   }
-  if (scrollRatio > 20) {
+  if (scrollRatio > 18) {
     progressbar.style.width = "30%";
   }
-  if (scrollRatio > 27) {
+  if (scrollRatio > 24) {
     progressbar2.style.width = "30%";
   }
-  if (scrollRatio > 34) {
+  if (scrollRatio > 29) {
     progressbar3.style.width = "30%";
   }
-  if (scrollRatio < 35) {
-    projectH1.animate([{ transform: "translateY(-30px)" }], 1000);
-  }
 
-  if (scrollRatio > 39) {
-    projectH1.animate([{ transform: "translateY(0)", opacity: "1" }], 1000);
-  }
-  if (scrollRatio < 57) {
+  if (scrollRatio < 33) {
     experienceH1.animate([{ transform: "translateY(-30px)" }], 1000);
     experienceBox.animate([{ transform: "translateY(-30px)" }], 1000);
   }
 
-  if (scrollRatio > 60) {
+  if (scrollRatio < 38) {
+    experienceBox.animate([{ transform: "translateY(-30px)" }], 1000);
+  }
+  if (scrollRatio > 39) {
     experienceH1.animate([{ transform: "translateY(0)", opacity: "1" }], 1000);
   }
-  if (scrollRatio > 70) {
+  if (scrollRatio > 43) {
     experienceBox.animate([{ transform: "translateY(0)", opacity: "1" }], 2000);
   }
-  if (scrollRatio < 85) {
+
+  if (scrollRatio < 63) {
+    projectH1.animate([{ transform: "translateY(-30px)" }], 1000);
+  }
+
+  if (scrollRatio > 67) {
+    projectH1.animate([{ transform: "translateY(0)", opacity: "1" }], 1000);
+  }
+
+  if (scrollRatio < 82) {
     contactH1.animate([{ transform: "translateY(-30px)" }], 1000);
   }
 
