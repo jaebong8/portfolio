@@ -415,7 +415,7 @@ main .section3 .container .grid-container div:nth-child(1) {
  background: url('./img/project1.png') no-repeat center / contain;
 }
 main .section3 .container .grid-container div:nth-child(2) {
-  
+  background: url('./img/project2.png') no-repeat center / contain;
 }
 
 
